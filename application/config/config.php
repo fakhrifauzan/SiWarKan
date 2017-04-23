@@ -25,8 +25,7 @@ date_default_timezone_set('Asia/Jakarta');
 |
 */
 
-$config['base_url'] = 'http://localhost/warung/';
-//$config['base_url'] = 'http://10.20.32.112/warung/';
+$config['base_url'] = 'https://localhost/warung/';
 
 /*
 |--------------------------------------------------------------------------
@@ -103,7 +102,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
