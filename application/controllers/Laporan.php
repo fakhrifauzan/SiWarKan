@@ -26,29 +26,20 @@ class Laporan extends CI_Controller {
 	}
 
 	public function cetak(){
-		$this->load->library('pdfgenerator');
 		$data['laporan'] = $this->Laporan_model->view_laporan();
-		//$this->load->view('laporan/laporan_cetak',$data);
 		$html = $this->load->view('laporan/laporan_cetak',$data,TRUE);
-		//$html = $this->template->load('template','laporan/laporan_view',$data,TRUE);
 		$this->pdfgenerator->generate($html,'laporan');
 	}
 
 	public function cetak_periode($tanggal1,$tanggal2){
-		$this->load->library('pdfgenerator');
 		$data['laporan'] = $this->Laporan_model->view_laporan_periode($tanggal1,$tanggal2);
-		//$this->load->view('laporan/laporan_cetak',$data);
 		$html = $this->load->view('laporan/laporan_cetak',$data,TRUE);
-		//$html = $this->template->load('template','laporan/laporan_view',$data,TRUE);
 		$this->pdfgenerator->generate($html,'laporan_periode');
 	}
 
 	public function cetak_transaksi($id_transaksi){
-		$this->load->library('pdfgenerator');
 		$data['laporan'] = $this->Laporan_model->view_laporan_transaksi($id_transaksi);
-		//$this->load->view('laporan/laporan_cetak',$data);
 		$html = $this->load->view('laporan/laporan_cetak_transaksi',$data,TRUE);
-		//$html = $this->template->load('template','laporan/laporan_view',$data,TRUE);
 		$this->pdfgenerator->generate($html,'laporan_transaksi');
 	}
 }
